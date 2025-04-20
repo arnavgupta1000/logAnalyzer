@@ -1,0 +1,46 @@
+.file-mini-card {
+  display: flex;
+  align-items: center;
+  background: #f3f7fa;
+  border: 1.5px solid #bfc9d1;
+  border-radius: 8px;
+  padding: 8px 16px 8px 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.04);
+  max-width: 320px;
+}
+.file-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+.file-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #3a7bd5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+.file-size {
+  font-size: 0.93rem;
+  color: #888;
+}
+.file-remove {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0 2px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+.file-remove:hover {
+  background: #fbe9e7;
+}

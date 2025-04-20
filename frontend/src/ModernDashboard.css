@@ -1,0 +1,275 @@
+.modern-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.dashboard-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0 32px 0;
+  gap: 32px;
+}
+
+.sidebar {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+  width: 260px;
+  min-width: 220px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sidebar-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #3a7bd5;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.dashboard-title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #3a7bd5;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+  padding: 26px 28px 20px 28px;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s;
+}
+.dashboard-card:hover {
+  box-shadow: 0 8px 32px rgba(60,60,100,0.16);
+}
+
+/* --- Animations --- */
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadein-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadein-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slidein-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadein { animation: fadein 0.7s cubic-bezier(.4,0,.2,1); }
+.animate-fadein-up { animation: fadein-up 0.8s cubic-bezier(.4,0,.2,1); }
+.animate-fadein-left { animation: fadein-left 0.8s cubic-bezier(.4,0,.2,1); }
+.animate-slidein-down { animation: slidein-down 0.9s cubic-bezier(.4,0,.2,1); }
+
+/* --- Part Summary Underline Animation --- */
+.part-summary-underline {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s;
+}
+.part-summary-underline::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg,#3a7bd5,#00d2ff);
+  position: absolute;
+  left: 0; bottom: -2px;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.part-summary-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Animated Tooltip --- */
+.animated-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background: #292E49;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 14px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 160px;
+  font-size: 1rem;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(60,60,100,0.13);
+  transition: opacity 0.24s cubic-bezier(.4,0,.2,1), transform 0.24s cubic-bezier(.4,0,.2,1);
+  animation: fadein 0.3s;
+}
+.part-summary-underline:hover .animated-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-16px);
+  pointer-events: auto;
+}
+
+/* --- Animate summary and parts --- */
+.summary-animated {
+  animation: fadein-up 0.8s cubic-bezier(.4,0,.2,1);
+}
+.part-item-animated {
+  animation: fadein 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+/* --- Button polish --- */
+.analyze-btn {
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.07);
+  font-size: 1.08rem;
+  letter-spacing: 0.03em;
+}
+.analyze-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  box-shadow: 0 4px 18px rgba(60,60,100,0.14);
+  transform: translateY(-2px) scale(1.04);
+}
+.analyze-btn:active:not(:disabled) {
+  background: linear-gradient(90deg, #3a7bd5, #11998e);
+  transform: scale(0.98);
+}
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Card hover polish --- */
+.dashboard-card {
+  transition: box-shadow 0.25s, transform 0.22s;
+}
+.dashboard-card:hover {
+  box-shadow: 0 12px 36px rgba(60,60,100,0.17);
+  transform: translateY(-2px) scale(1.012);
+}
+
+/* --- List polish --- */
+.parts-list {
+  padding-left: 12px;
+}
+.parts-list li {
+  margin-bottom: 10px;
+  position: relative;
+  list-style: disc inside;
+}
+.parts-list li:last-child {
+  margin-bottom: 0;
+}
+
+
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.analyze-btn {
+  background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.07);
+}
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.analyze-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+}
+
+.summary-card .summary-text {
+  background: #f3f7fa;
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 1.13rem;
+  color: #2a3a4a;
+  margin: 0;
+}
+
+.parts-card .parts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.parts-card .part-highlight {
+  text-decoration: underline dotted;
+  cursor: pointer;
+  color: #3a7bd5;
+  position: relative;
+}
+.parts-card .part-highlight:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+.parts-card .tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  background: #3a7bd5;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  min-width: 120px;
+  z-index: 10;
+  transition: opacity 0.18s;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.11);
+}
+
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0 16px 0;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    max-height: unset;
+    margin-bottom: 18px;
+  }
+}

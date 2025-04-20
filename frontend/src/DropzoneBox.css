@@ -1,0 +1,37 @@
+.dropzone-box {
+  border: 2.5px dashed #3a7bd5;
+  border-radius: 14px;
+  background: #f3f7fa;
+  padding: 36px 0;
+  text-align: center;
+  color: #3a7bd5;
+  font-size: 1.18rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.dropzone-box.active {
+  background: #e0eafc;
+  border-color: #00d2ff;
+}
+.dropzone-box.uploading {
+  background: #e0eafc;
+  color: #aaa;
+  border-color: #bbb;
+}
+.dz-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dz-uploading {
+  color: #aaa;
+  font-size: 1.05rem;
+}
+.dz-drag {
+  color: #11998e;
+  font-size: 1.1rem;
+}

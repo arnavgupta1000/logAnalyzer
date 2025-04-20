@@ -1,0 +1,118 @@
+.simple-modern-bg {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f8fafc 0%, #e3eefe 100%);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 36px 0 36px 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 28px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.upload-section, .summary-section, .parts-section, .chart-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(60,60,100,0.10);
+  padding: 26px 28px 20px 28px;
+  margin-bottom: 22px;
+  transition: box-shadow 0.2s;
+}
+.upload-section:hover, .summary-section:hover, .parts-section:hover, .chart-section:hover {
+  box-shadow: 0 8px 32px rgba(60,60,100,0.16);
+}
+
+.analyze-btn {
+  background: linear-gradient(90deg, #2563eb 0%, #00c6fb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.07);
+}
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.analyze-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #00c6fb 0%, #2563eb 100%);
+}
+
+.summary-section .summary-text, .summary-section p {
+  background: #f3f7fa;
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 1.13rem;
+  color: #2a3a4a;
+  margin: 0;
+}
+
+.parts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.parts-list li {
+  margin-bottom: 10px;
+}
+.parts-list .part-highlight, .parts-list span[style*='underline dotted'] {
+  text-decoration: underline dotted;
+  cursor: pointer;
+  color: #2563eb;
+  position: relative;
+  transition: color 0.18s;
+}
+.parts-list .part-highlight:hover, .parts-list span[style*='underline dotted']:hover {
+  color: #00c6fb;
+}
+.parts-list .tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 120%;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  min-width: 120px;
+  max-width: 320px;
+  z-index: 100;
+  transition: opacity 0.18s;
+  box-shadow: 0 4px 16px rgba(30,40,80,0.18);
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.parts-list .part-highlight:hover .tooltip, .parts-list span[style*='underline dotted']:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    padding: 16px 0 16px 0;
+  }
+  .upload-section, .summary-section, .parts-section, .chart-section {
+    padding: 18px 8px 14px 8px;
+  }
+}

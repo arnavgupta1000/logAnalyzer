@@ -1,0 +1,10 @@
+__pycache__/
+.env
+loganal.db
+loganalyses.json
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+.DS_Store

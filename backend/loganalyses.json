@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "filename": "test.log",
+    "summary": "The application started normally, established a database connection, and began processing requests. However, it encountered a series of issues including high memory usage, NullPointerException, slow database queries, and system overload, which led to critical errors and eventual system shutdown. After a restart, the system faced further issues with a missing configuration file, OutOfMemoryError, and ultimately initiated another system shutdown.",
+    "parts": [
+      {
+        "summary_start_index": 0,
+        "summary_end_index": 50,
+        "log_start_index": 0,
+        "log_end_index": 44,
+        "tooltip": "Application started and database connection established"
+      },
+      {
+        "summary_start_index": 50,
+        "summary_end_index": 120,
+        "log_start_index": 45,
+        "log_end_index": 244,
+        "tooltip": "Encountered high memory usage, NullPointerException in UserService.java:125, and failed to process user request"
+      },
+      {
+        "summary_start_index": 120,
+        "summary_end_index": 180,
+        "log_start_index": 245,
+        "log_end_index": 344,
+        "tooltip": "Detected slow database query and system overload, leading to DatabaseConnectionException and failure to process payment"
+      },
+      {
+        "summary_start_index": 180,
+        "summary_end_index": 250,
+        "log_start_index": 345,
+        "log_end_index": 488,
+        "tooltip": "System recovered, cleaned up resources, and resumed normal operation"
+      },
+      {
+        "summary_start_index": 250,
+        "summary_end_index": 350,
+        "log_start_index": 489,
+        "log_end_index": 688,
+        "tooltip": "Encountered FileNotFoundException due to missing config file, used default configuration, and faced OutOfMemoryError in ProcessingService.java:89"
+      },
+      {
+        "summary_start_index": 350,
+        "summary_end_index": 400,
+        "log_start_index": 689,
+        "log_end_index": 844,
+        "tooltip": "Memory allocation failed, system shutdown initiated, emergency protocols activated, and system restart initiated"
+      }
+    ],
+    "created_at": "2025-04-20T21:47:24.433023"
+  }
+]

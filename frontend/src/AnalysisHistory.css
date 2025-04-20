@@ -1,0 +1,41 @@
+.history-panel {
+  background: #f3f7fa;
+  border-radius: 12px;
+  padding: 18px 16px 10px 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(60,60,100,0.06);
+  max-width: 360px;
+}
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.history-list li {
+  margin-bottom: 8px;
+}
+.history-btn {
+  background: #fff;
+  border: 1.5px solid #bfc9d1;
+  border-radius: 7px;
+  padding: 8px 10px;
+  font-size: 1.03rem;
+  color: #3a7bd5;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.18s, border 0.18s;
+}
+.history-btn:hover {
+  background: #e0eafc;
+  border-color: #00d2ff;
+}
+.history-date {
+  color: #888;
+  font-size: 0.93rem;
+  margin-left: 10px;
+}
