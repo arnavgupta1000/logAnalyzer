@@ -41,3 +41,4 @@ docker-compose up --build
 ---
 For any issues, check the logs with `docker-compose logs backend` or `docker-compose logs frontend`.
 # logAnalyzer
+# logAnalyzer
